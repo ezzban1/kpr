@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кваліфікаційна робота</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .menu-btn {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .menu-btn:hover {
+            background: #2980b9;
+        }
+
+        .menu-btn.active {
+            background: #2c3e50;
+        }
+
+        .page {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin: 20px 0 10px 0;
+        }
+
+        .block {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #3498db;
+            color: white;
+        }
+
+        .screenshot {
+            margin: 25px 0;
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+
+        .screenshot img {
+            max-width: 90%;
+            height: auto;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .screenshot p {
+            margin-top: 10px;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .task-container {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            align-items: flex-start;
+        }
+
+        .task-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .task-images {
+            flex: 0 0 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .task-image-item {
+            text-align: center;
+        }
+
+        .task-image-item img {
+            width: 100%;
+            height: auto;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .task-image-item p {
+            margin-top: 8px;
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .task-container {
+                flex-direction: column;
+            }
+
+            .task-images {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+
+            .menu {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Кваліфікаційна робота</h1>
+            <p>Виконав здобувач освіти групи 16-3: Грановський Данііл</p>
+        </div>
+
+        <div class="menu">
+            <button class="menu-btn active" onclick="showPage('page1')">Головна</button>
+            <button class="menu-btn" onclick="showPage('page2')">Звіт</button>
+            <button class="menu-btn" onclick="showPage('page3')">Завдання</button>
+        </div>
+
+        <div id="page1" class="page active">
+            <h2>Головна сторінка</h2>
+
+            <div class="block">
+                <h3>Кваліфікаційна робота</h3>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Інформація</th>
+                    <th>Дані</th>
+                </tr>
+                <tr>
+                    <td>Виконавець</td>
+                    <td>Грановський Данііл</td>
+                </tr>
+                <tr>
+                    <td>Група</td>
+                    <td>16-3</td>
+                </tr>
+                <tr>
+                    <td>Спеціальність</td>
+                    <td>Оператор з обробки інформації та програмного забезпечення</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="page2" class="page">
+            <h2>Звіт про роботу</h2>
+
+            <div class="screenshot">
+                <img src="images/11212.jpg">
+                <p>Рис. 1 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/2.jpg">
+                <p>Рис. 2 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/3.jpg">
+                <p>Рис. 3 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/4.jpg">
+                <p>Рис. 4 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/5.jpg">
+                <p>Рис. 5 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/6.jpg">
+                <p>Рис. 6 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/7.jpg">
+                <p>Рис. 7 </p>
+            </div>
+
+            <div class="screenshot">
+                <img src="images/312.jpg">
+                <p>Рис. 8 </p>
+            </div>
+
+        </div>
+
+        <div id="page3" class="page">
+            <h2>Завдання</h2>
+
+
+            <div class="task-container">
+                <div class="task-text">
+                    <div class="block">
+                        <h3>Завдання 3: Встановити віртуальну машину.</h3>
+                        <p><strong>Опис завдання:</strong> Встановлення віртуальної машини</p>
+                        <p><strong>Кроки виконання:</strong></p>
+                        <ul>
+                          <li>Крок 1 - Відкрив VirtualBox. Натиснув New (Створити).</li>
+                          <li>Крок 2 - Увів назву ВМ та вибрав тип ОС (наприклад, Windows 10 / Ubuntu) Визначив обсяг оперативної пам'яті (рекомендовано 2-4 ГБ для Linux, 4-8 ГБ для Windows).</li>
+                          <li>Крок 3 - Створив віртуальний жорсткий диск типу VDI об'ємом 20-50 ГБ.</li>
+                          <li>Крок 4 - Запустив створену ВМ. У вікні встановлення ОС вибрав мову, розділи диска та тип інcталяції.</li>
+                          <li>Крок 5 - Дочекався завершення інсталяції та перезавантажив ВМ. Віртуальна машина готова!</li>
+                        </ul>
+                        <p><strong>Результат:</strong> Встановлена віртуальна машина.</p>
+                        <p><strong>Висновок:</strong> Завдання виконано успішно.</p>
+                    </div>
+                </div>
+
+                <div class="task-images">
+                    <div class="task-image-item">
+                        <img src="images/11.jpg">
+                        <p>Рис. 3.1 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/22.jpg">
+                        <p>Рис. 3.2 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/33.jpg">
+                        <p>Рис. 3.3 </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="task-container">
+                <div class="task-text">
+                    <div class="block">
+                        <h3>Завдання 4: Встановити та налаштувати операційну систему.</h3>
+                        <p><strong>Опис завдання:</strong> Встановлення та налаштування операційної системи</p>
+                        <p><strong>Кроки виконання:</strong></p>
+                        <ul>
+                          <li>Крок 1 - Підготувати завантажувальний носій</li>
+                          <li>Крок 2 - Налаштувати BIOS/UEFI для завантаження с USB</li>
+                          <li>Крок 3 - Виконати чисту установку операційної системи</li>
+                          <li>Крок 4 - Налаштувати користувацькі параметри</li>
+                          <li>Крок 5 - Встановити необхідні оновлення</li>
+                        </ul>
+                        <p><strong>Результат:</strong> Microsoft Office успішно встановлено та налаштовано.</p>
+                        <p><strong>Висновок:</strong> Програмне забезпечення готове до використання.</p>
+                    </div>
+                </div>
+                <div class="task-images">
+                    <div class="task-image-item">
+                        <img src="images/04.jpg">
+                        <p>Рис. 4.1 </p>
+                    </div>
+                    <div class="task-image-item">
+
+                    </div>
+                    <div class="task-image-item">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="task-container">
+                <div class="task-text">
+                    <div class="block">
+                        <h3>Завдання 5: Встановити драйвери периферійних пристроїв.</h3>
+                        <p><strong>Опис завдання:</strong> Встановлленя драйверів</p>
+                        <p><strong>Кроки виконання:</strong></p>
+                        <ul>
+                          <li>Оскільки зараз 2025 рік, всі драйвери на сучасних пристроях встановлюються автоматично при підключенні пристрою.</li>
+                          <li>Якщо щось пішло не так, робимо так, як зазначено у звіті</li>
+                          <li>Наприклад, у мене миша Attack Shark X11. Переходимо на офіційний сайт і встановлюємо драйвер для пристрою.</li>
+                          <li>https://attackshark.com/products/attack-shark-x11-wireless-gaming-mouse-charging-dock</li>
+                        </ul>
+                        <p><strong>Результат:</strong> Встановлена та готова до роботи.</p>
+                        <p><strong>Висновок:</strong> Завдання успішно виконано. Система працює стабільно.</p>
+                    </div>
+                </div>
+
+                <div class="task-images">
+                    <div class="task-image-item">
+                        <img src="images/123213.jpg">
+                        <p>Рис. 5.1 </p>
+                    </div>
+                    <div class="task-image-item">
+
+                    </div>
+                    <div class="task-image-item">
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="task-container">
+                <div class="task-text">
+                    <div class="block">
+                        <h3>Завдання 6: Здійснити перевірку флеш носія.</h3>
+                        <p><strong>Опис завдання:</strong> Перевірка флеш носія</p>
+                        <p><strong>Кроки виконання:</strong></p>
+                        <ul>
+                          <li>Крок 1 - Вимкни віртуальну машину. У VirtualBox натисни на свою ВМ → Settings.</li>
+                          <li>Крок 2 - Перейди в USB. Постав галочку на USB 2.0 (EHCI) або USB 3.0 (xHCI) - якщо є Extension Pack.</li>
+                          <li>Крок 3 - Натисни Add USB filter (значок з USB + справа)</li>
+                          <li>Крок 4 - Вибери зі списку свою флешку.</li>
+                        </ul>
+                        <p><strong>Результат:</strong> Перевірений флеш носій.</p>
+                        <p><strong>Висновок:</strong> Перевірений флеш носій.</p>
+                    </div>
+                </div>
+                <div class="task-images">
+                    <div class="task-image-item">
+                        <img src="images/qq.jpg">
+                        <p>Рис. 6.1 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/ww.jpg">
+                        <p>Рис. 6.2 </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="task-container">
+                <div class="task-text">
+                    <div class="block">
+                        <h3>Завдання 8: Створити базу даних «Асортимент товарів»</h3>
+                        <p><strong>Опис завдання:</strong> Створення баз даних</p>
+                        <p><strong>Кроки виконання:</strong></p>
+                        <ul>
+                            <li>Запустив(ла) MS Access. Створив(ла) нову базу даних з назвою «Асортимент товарів».</li>
+                            <li>Натискаємо вкладку создати  У режимі таблиці створив(ла) нову таблицю.</li>
+                            <li>Додав(ла) поля Код товару – числовий Найменування – текстовий Кількість – числовий Ціна – грошовий Зберіг(ла) таблицю з назвою Товари..</li>
+                            <li>У пошуку вів (Конструкрутор запросів) Додав(ла) таблицю Товари. У полі Ціна встановив(ла) критерій: [Введіть мінімальну ціну:]</li>
+                            <li>Створив(ла) новий вибірковий запит. Обрав(ла) поля: Найменування, Кількість, Ціна. Встановив(ла) умову відбору за потребою. Зберіг(ла) як Запит_Вибірка.</li>
+                            <li>Створив(ла) звіт за допомогою майстра звітів. Вибрав(ла) усі поля таблиці Товари. Зберіг(ла) звіт із назвою Звіт_Товаи.</li>
+                        </ul>
+                        <p><strong>Результат:</strong> Створенна база даних</p>
+                        <p><strong>Висновок:</strong> Готова база даних</p>
+                    </div>
+                </div>
+                <div class="task-images">
+                    <div class="task-image-item">
+                        <img src="images/z.jpg">
+                        <p>Рис. 8.1 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/x.jpg">
+                        <p>Рис. 8.2 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/c.jpg">
+                        <p>Рис. 8.3 </p>
+                    </div>
+                    <div class="task-image-item">
+                        <img src="images/v.jpg">
+                        <p>Рис. 8.4 </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Сховати всі сторінки
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Видалити активний клас з усіх кнопок
+            document.querySelectorAll('.menu-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Показати вибрану сторінку
+            document.getElementById(pageId).classList.add('active');
+
+            // Додати активний клас до натиснутої кнопки
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
